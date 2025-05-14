@@ -7,183 +7,242 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-color: rgb(10, 10, 25);
-      --accent: rgb(56, 189, 248);
-      --light: rgb(240, 240, 255);
-      --text-color: rgb(200, 200, 200);
-      --highlight-color: rgb(255, 150, 0);
+    --bg-color: rgb(10, 10, 25);
+    --accent: rgb(56, 189, 248);
+    --light: rgb(240, 240, 255);
+    --text-color: rgb(200, 200, 200);
+    --highlight-color: rgb(255, 150, 0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+}
+
+/* Default mobile-first styles */
+
+header {
+    height: 700px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--accent);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-top: 150px;
+    margin-bottom: 15px;
+    color: var(--light);
+}
+
+header p {
+    font-size: 1.2rem;
+    color: var(--light);
+}
+
+.about-me,
+.skills,
+.projects,
+.creative-life,
+.daily-life,
+.contact {
+    padding: 40px 10px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.skills-container,
+.projects-container,
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.language-block {
+    background-color: var(--bg-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+}
+
+.language-block h3,
+.skill h3,
+.project-card h3,
+.contact-item h3 {
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.language-block p {
+    font-size: 1rem;
+}
+
+.skill,
+.contact-item {
+    background-color: var(--bg-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+}
+
+.skill svg,
+.contact-item svg {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    fill: var(--highlight-color);
+}
+
+.project {
+    padding: 15px;
+    display: inline-block;
+    border-radius: 10px;
+    color: var(--text-color);
+    margin: 20px auto;
+    border: 1px solid white;
+    width: 90%;
+    max-width: 600px;
+    text-align: left;
+}
+
+.project h3 {
+    margin-left: 10px;
+}
+
+.project-button {
+    padding: 10px;
+    background-color: rgb(33, 150, 243);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    margin: 10px 0 0 10px;
+    cursor: pointer;
+    transition: background-color 0.15s, padding 0.15s;
+}
+
+.project-button:hover {
+    background-color: rgb(23, 118, 194);
+}
+
+.project-button:active {
+    padding: 9px;
+}
+
+.projects .project-card {
+    margin: 20px;
+}
+
+.projects .project-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--accent);
+}
+
+.projects .project-card a {
+    color: var(--highlight-color);
+    text-decoration: none;
+}
+
+.projects .project-card a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: var(--bg-color);
+    color: var(--light);
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Tablet (≥ 600px) */
+@media (min-width: 600px) {
+    header h1 {
+        font-size: 3rem;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    header p {
+        font-size: 1.3rem;
     }
 
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-      display: flex;
+    .language-block {
+        max-width: 600px;
+    }
+}
+
+/* Small laptop (≥ 768px) */
+@media (min-width: 768px) {
+    header h1 {
+        font-size: 3.5rem;
+    }
+
+    .language-block {
+        max-width: 700px;
+    }
+
+    .skill,
+    .contact-item {
+        width: 220px;
+    }
+
+    .project {
+        max-width: 700px;
+    }
+}
+
+/* Desktop (≥ 1024px) */
+@media (min-width: 1024px) {
+    .language-block {
+        max-width: 800px;
+    }
+
+    .skill,
+    .contact-item {
+        width: 250px;
+    }
+
+    .project {
+        max-width: 800px;
     }
 
     header {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background-color: var(--accent);
-      color: white;
+        height: 800px;
     }
+}
 
-    header h1 {
-      font-size: 4rem;
-      margin-bottom: 20px;
-      font-weight: 700;
-      color: var(--light);
-    }
-
-    header  {
-      font-size: 1.5rem;
-      font-weight: 400;
-      color: var(--light);
-    }
-
-    .about-me, .skills, .projects, .creative-life, .daily-life, .contact {
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-
-    .project {
-      padding: 13px 15px;
-      display: inline-block;
-      border-radius: 10px;
-      color: var(--text-color);
-      margin-left: 40px;
-      margin-top: 30px;
-      border-color: rgb(255, 255, 255);
-      border-style: solid;
-    }
-    .project h3 {
-      text-align: left;
-      margin-left: 30px;
-    }
-    .project-button {
-      padding-right: 10px;
-      padding-left: 10px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      background-color: rgb(33, 150, 243);
-      color: rgb(255, 255, 255);
-      font-weight: bold;
-      border: none;
-      border-radius: 10px;
-      margin-left: 20px;
-      margin-top: 10px;
-      display: inline-block;
-      cursor: pointer;
-      transition: background-color 0.15s,padding-right 0.15s,
-      padding-left 0.15s,
-      padding-top 0.15s,
-      padding-bottom 0.15s;
-    }
-    .project-button:hover {
-      background-color: rgb(23, 118, 194);
-    }
-    .project-button:active {
-      padding-left: 9px;
-      padding-right: 9px;
-      padding-top: 9px;
-      padding-bottom: 9px;
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      text-align: center;
-      color: var(--accent);
-    }
-
-
-
-    .skills-container, .projects-container, .contact-container {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-    .language-block {
-      background-color: var(--bg-color);
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      width: 800px;
-      text-align: center;
-      margin-left: 200px;
-    }
-
-    .skill, .contact-item {
-      background-color: var(--bg-color);
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      width: 200px;
-      text-align: center;
-    }
-
-    .skill svg, .contact-item svg {
-      width: 50px;
-      height: 50px;
-      margin-bottom: 15px;
-      fill: var(--highlight-color);
-    }
-    .language-block h3 {
-      font-size: 1.5rem;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-    .language-block p {
-      font-size: 18px;
-    }
-    .skill h3, .project-card h3, .contact-item h3 {
-      font-size: 1.5rem;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-
-    .projects .project-card {
-      margin: 20px;
-    }
-
-    .projects .project-card h3 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      color: var(--accent);
-    }
-
-    .projects .project-card a {
-      color: var(--highlight-color);
-      text-decoration: none;
-    }
-
-    .projects .project-card a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      background-color: var(--bg-color);
-      color: var(--light);
-      padding: 20px;
-      text-align: center;
-    }
-
-    footer p {
-      font-size: 1rem;
-    }
   </style>
 </head>
 <body>
